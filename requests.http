@@ -2,7 +2,8 @@ POST http://localhost:3000/convert
 Content-Type: application/json
 
 {
-  "value": "0",
+  "type": "length",
+  "value": 1000,
   "from": "m",
   "to": "km"
 }
