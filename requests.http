@@ -1,9 +1,10 @@
 POST http://localhost:3000/convert
 Content-Type: application/json
-
 {
-  "type": "length",
-  "value": 1000,
-  "from": "m",
-  "to": "km"
+
+  "type": "temperature",
+  "value": 0,
+  "from": "C",
+  "to": "F"
+  
 }
