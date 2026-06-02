@@ -15,11 +15,17 @@ function convert(req, res) {
     });
   }
 
-  const result = convertUnits(type, Number(value), from, to);
+  try {
+    const result = convertUnits(type, Number(value), from, to);
 
-  res.json({
-    result,
-  });
+    res.json({
+      result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      error: error.message,
+    });
+  }
 }
 
 module.exports = convert;

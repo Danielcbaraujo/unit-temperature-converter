@@ -11,7 +11,11 @@ const weightUnits = {
   kg: 1000,
 };
 
+const unitTypes = {
+  length: lengthUnits,
+  weight: weightUnits,
+};
+
 module.exports = {
-  lengthUnits,
-  weightUnits,
+  unitTypes,
 };

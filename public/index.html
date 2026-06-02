@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit Converter</title>
+</head>
+<body>
+
+  <h1>Conversor de Unidades</h1>
+
+  <form id="converter-form">
+
+    <input
+      type="number"
+      id="value"
+      placeholder="Digite um valor"
+      required
+    >
+
+    <select id="type">
+      <option value="length">Comprimento</option>
+      <option value="weight">Peso</option>
+      <option value="temperature">Temperatura</option>
+    </select>
+
+    <input
+      type="text"
+      id="from"
+      placeholder="De"
+      required
+    >
+
+    <input
+      type="text"
+      id="to"
+      placeholder="Para"
+      required
+    >
+
+    <button type="submit">
+      Converter
+    </button>
+
+  </form>
+
+  <h2 id="result"></h2>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

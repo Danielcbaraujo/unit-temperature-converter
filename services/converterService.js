@@ -1,9 +1,7 @@
-const { lengthUnits, weightUnits } = require("../utils/conversionTables");
+const { unitTypes } = require("../utils/conversionTables");
 
 function convertTemperature(value, from, to) {
-  if (from === to) {
-    return value;
-  }
+  if (from === to) return value;
 
   if (from === "C" && to === "F") {
     return (value * 9) / 5 + 32;
@@ -35,19 +33,13 @@ function convertUnits(type, value, from, to) {
     return convertTemperature(value, from, to);
   }
 
-  let units;
+  const units = unitTypes[type];
 
-  if (type === "length") {
-    units = lengthUnits;
+  if (!units) {
+    throw new Error("Tipo inválido");
   }
 
-  if (type === "weight") {
-    units = weightUnits;
-  }
-
-  const result = (value * units[from]) / units[to];
-
-  return result;
+  return (value * units[from]) / units[to];
 }
 
 module.exports = convertUnits;
